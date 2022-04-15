@@ -2,11 +2,17 @@ package ru.gb.gubaydulin;
 
 public class HomeWorkApp {
     public static void main(String[] args) {
+        System.out.println("2.");
         printThreeWords();
         System.out.println("*********************************");
+        System.out.print("3. ");
         checkSumSign();
         System.out.println("*********************************");
+        System.out.print("4. ");
         printColor();
+        System.out.println("*********************************");
+        System.out.print("5. ");
+        compareNumbers();
     }
 
     public static void printThreeWords() {
@@ -37,4 +43,12 @@ public class HomeWorkApp {
         }
 
     }
+    public static void compareNumbers() {
+        int a = 10, b = 15;
+        if (a >= b) {
+            System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
+        }
+            }
 }
