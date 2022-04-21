@@ -9,7 +9,6 @@ public class HW2Task2 {
         int a = scanner.nextInt();
         checkPozitive(a);
     }
-
     public static void checkPozitive(int a) {
 
         if ( a >=0 ){
