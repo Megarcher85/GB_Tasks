@@ -5,11 +5,8 @@ import java.util.Scanner;
 
 public class TaskMineSweeper {
 
-    //константы:
-    // ширина поля
-    //высота поля
-    //количество мин
-
+    //константы: ширина поля, высота поля, количество мин
+    public static int moveCount = 0;
     public static final int WIDTH = 15; //ОБЪЯВЛЕНИЕ КОНСТАНТ
     public static final int HEIGHT = 10;
     public static final int MINES_COUNT = 20;
@@ -35,6 +32,7 @@ public class TaskMineSweeper {
             System.out.println("Поздравляю! Вы выиграли!!!");
         } else {
             System.out.println("БАБАХ!!!");
+            System.out.println("Вы взорвались на "+moveCount+"м ходу.");
         }
     }
 
@@ -46,6 +44,7 @@ public class TaskMineSweeper {
         do {
             isPassMove = move(board, moves);
             win = isWin(moves);
+            moveCount++;
         } while (isPassMove && !win);
         return isPassMove;
     }
@@ -53,7 +52,7 @@ public class TaskMineSweeper {
     private static boolean isWin(int[][] moves) {
         // HEIGHT * WIDTH - MINES_COUNT
         int openCell = 0;
-        for (int i = 0; i < HEIGHT; i++) {
+                for (int i = 0; i < HEIGHT; i++) {
             for (int j = 0; j < WIDTH; j++) {
                 if (moves[i][j] == CELL_OPEN) {
                     openCell++;
@@ -67,8 +66,9 @@ public class TaskMineSweeper {
         Scanner scanner = new Scanner(System.in);
         printBoard(board, moves);
         int row, line;
+        String flag = "FL";
         while (true) {
-            System.out.print("Ваш ход (столбец, сторка, например 1A):");
+            System.out.print("Ваш ход (столбец, сторка - например 1A) или укажите координаты флага, написав FL:");
             String move = scanner.nextLine();
             row = move.charAt(0) - 'A';
             line = move.charAt(1) - '0';
@@ -144,6 +144,8 @@ public class TaskMineSweeper {
                 System.out.print(colorCode);
                 if (board[i][j] == EMPTY) {
                     System.out.print(" .");
+
+
                 } else if (board[i][j] == MINE) {
                     System.out.print(" *");
                 } else {
