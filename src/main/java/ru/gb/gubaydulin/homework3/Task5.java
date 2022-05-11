@@ -5,14 +5,14 @@ import java.util.Arrays;
 public class Task5 {
 
     public static void main(String[] args) {
-        //long len, initialValue;
-        makeSimpleArray(6, 13);
+        int[] arr = makeSimpleArray(5, 12);
+        System.out.println(Arrays.toString(arr));
     }
 
     public static int[] makeSimpleArray(int len, int initialValue) {
-        int[] arr = new int[len];
+    int[]arr = new int[len];
         Arrays.fill(arr, initialValue);
         return (arr);
-    }
+        }
 }
 
