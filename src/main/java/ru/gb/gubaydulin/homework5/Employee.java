@@ -14,8 +14,24 @@ public class Employee {
         this.position = position;
         this.email = email;
         this.phoneNumb = phoneNumb;
-        this.salary = salary;
-        this.age = age;
+        setSalary(salary);
+        setAge(age);
+    }
+
+    public void setSalary(int salary) {
+        if (salary >= 0) {
+            this.salary = salary;
+        }
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0 && age < 200) {
+            this.age = age;
+        }
     }
 
     public void print() {

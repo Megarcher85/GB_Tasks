@@ -9,6 +9,12 @@ public class Task {
         staffArr[3] = new Employee("Иванова АА", "менеджер", "iaa@m.ru", "4444", 44000, 35);
         staffArr[4] = new Employee("Петрова ББ", "менеджер", "pbb@m.ru", "5555", 48000, 44);
         staffArr[5] = new Employee("Сидорова ВВ", "менеджер", "svv@m.ru", "6666", 52000, 33);
+
+        for (Employee employee : staffArr) {
+            if (employee.getAge() >= 40) {
+                employee.print();
+            }
+        }
     }
 
 }
