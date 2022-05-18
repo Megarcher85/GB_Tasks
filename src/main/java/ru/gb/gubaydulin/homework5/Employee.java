@@ -17,4 +17,8 @@ public class Employee {
         this.salary = salary;
         this.age = age;
     }
+
+    public void print() {
+        System.out.println("Полное имя сотрудника: " + fullName + ", " + "Должность сотрудника: " + position + ", " + "Электронная почта: " + email + ", " + "Номер телефона: " + phoneNumb + ", " + "Заработная плата: " + salary + ", " + "Возраст сотрудника: " + age);
+    }
 }
